@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "ea97ccea-6835-4822-a417-5d93f09a98db",
+		"name": "MBA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Controller",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Karthik\",\r\n    \"lastName\":\"narayan\",\r\n    \"email\":\"karthikgogul3@gmail.com\",\r\n    \"password\":\"karthik5\",\r\n    \"contactNumber\":\"9677255341\",\r\n    \"userRoles\":[\"ROLE_ADMIN\",\"ROLE_USER\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXJ0aGlrZ29ndWwzQGdtYWlsLmNvbSIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJpYXQiOjE2ODg2MjM2MDQsImV4cCI6MTY4ODYyNTQwNH0.3rcTgya4R3uaQCp89UngXkRm6aKSO0hK0e5hfEGi9U8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/validate",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "admin"
+						},
+						"url": {
+							"raw": "localhost:8081/forgot",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/reset",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie Controller",
+			"item": [
+				{
+					"name": "Add Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieName\":\"MI-7\",\r\n\t\"theatres\":[\r\n        {\r\n        \"theatreName\":\"PVR\",\r\n\t    \"noOfTickets\":\"120\"\r\n    },{\r\n        \"theatreName\":\"AGS\",\r\n\t    \"noOfTickets\":\"120\"\r\n    }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/addMovie",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"addMovie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/search/GOTG",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"search",
+								"GOTG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieName\":\"GOTG\",\r\n    \"theatreName\":\"PVR\",\r\n    \"noOfTickets\":3,\r\n    \"seatNumber\":[1,2,3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/GOTG/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"GOTG",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJpYXQiOjE2ODkwNzE1ODQsImV4cCI6MTY4OTA3MzM4NH0.dFm3jPvG7D4vC3CyT1FjHaY-RyWlQQKTVYTqxfPe8gw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "BOOK ASAP"
+						},
+						"url": {
+							"raw": "localhost:8081/GOTG/update/PVR",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"GOTG",
+								"update",
+								"PVR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJpYXQiOjE2ODkwNzE1ODQsImV4cCI6MTY4OTA3MzM4NH0.dFm3jPvG7D4vC3CyT1FjHaY-RyWlQQKTVYTqxfPe8gw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/GOTG/ticket/PVR",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"GOTG",
+								"ticket",
+								"PVR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Theatre",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/MI-7/delete/PVR",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"MI-7",
+								"delete",
+								"PVR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODYyNTY1NywiaWF0IjoxNjg4NjIzODU3fQ.PdhIiXZUa4Gb3G7VvpxjBJhD3nWa-S_ycxIOPGKJdeo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/MI-7/delete/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"MI-7",
+								"delete",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
