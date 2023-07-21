@@ -1,0 +1,3 @@
+Add Movie: https://lee8a67gmk.execute-api.us-east-1.amazonaws.com/dev/addMovie
+Get All Movies:  https://lee8a67gmk.execute-api.us-east-1.amazonaws.com/dev/all
+ELB: https://mba-elb-1011317693.us-east-1.elb.amazonaws.com
